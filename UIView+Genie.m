@@ -298,7 +298,7 @@ static const int BCTrapezoidWinding[4][4] = {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(context, xOffset, yOffset);
     
-    [self.layer renderInContext:context];
+    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
     
     UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
